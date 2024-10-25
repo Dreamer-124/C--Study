@@ -1,4 +1,5 @@
-#include <iostream>  // 预处理，#之后的都是预处理语句，在编译发生之前就被处理了
+#include <iostream> 
+#include "Log.h"
 
 void Log(const char* message)
 {
