@@ -21,6 +21,9 @@
     <ClCompile Include="Log.cpp">
       <Filter>资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Static.cpp">
+      <Filter>资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EndBrace.h">

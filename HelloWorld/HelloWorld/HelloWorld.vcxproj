@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Static.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EndBrace.h" />
