@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 #define LOG(x) std::cout << x << std::endl
 
@@ -122,9 +123,40 @@ void get_instance()
 	Singleton::Get().Hello();
 }
 
+class Entity
+{
+public:
+	virtual std::string GetName() {return "Enity";}
+};
+
+class PlayerEnity : public Entity
+{
+private:
+	string m_Name;
+public:
+	PlayerEnity(const string& name) 
+		: m_Name(name) {}
+
+	string GetName() override {return m_Name;}
+};
+
+void PrintName(Entity* entity)
+{
+	cout << entity->GetName() << endl;
+}
+
+void virtual_function()
+{
+	Entity* e = new Entity();
+	PlayerEnity* p = new PlayerEnity("Cherno");
+
+	PrintName(e);
+	PrintName(p);
+}
+
 int main()
 {
-	log();
+	virtual_function();
 	std::cin.get();
 }
  
