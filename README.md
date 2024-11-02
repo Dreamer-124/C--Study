@@ -140,3 +140,43 @@ public:
     std::string GetClassName() {return "Entity";}
 }
 ```
+
+## C++可见性
+- 一个对象的可见性，是指谁能看到它们，谁能调用它们，谁能使用它们
+- C++中的三个基础可见性修饰符是private, protected, public
+- friend可以从类中访问私有成员
+- 可见性可以确保人们不会调用不应该调用的代码，这些代码可能会破坏某些东西
+```C++
+class Entity
+{
+private:  // 只有在当前类内部可以访问
+    int X, Y;
+protected:  // 当前类和子类都可以进行访问
+    void Print()
+    {
+
+    }
+public:  // 可以被公开访问
+    void Entity()
+    {
+        x = 0;
+    }
+}
+```
+
+## C++数组
+- 尽可能在for循环中条件判别式中不要用多重判别，比如 <= ，因为这样会降低程序性能
+- 数组是连续的存储数据
+- new申请的内存的生存周期是一直到你用delete删除它
+- 尽可能在栈上创建数组来避免内存间接寻址，因为在内存中跳跃肯定会影响性能
+- 在C++11中，标准数组std::array可以被用来代替这里展示的原始数组，这样会更加安全，但是肯定会有额外的开销
+```C++
+std::array <int, 5> another;
+
+for(int i = 0; i < another.size(); i++)
+{
+    another[i] = 2;
+}
+```
+
+## C++字符串
